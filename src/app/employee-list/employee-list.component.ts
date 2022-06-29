@@ -5,7 +5,8 @@ import { EmployeeService } from '../employee.service';
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
-  styleUrls: ['./employee-list.component.css']
+  styleUrls: ['./employee-list.component.css'] //,
+  //providers:[EmployeeService]
 })
 export class EmployeeListComponent implements OnInit {
    employees!:Employee[];
@@ -18,9 +19,14 @@ export class EmployeeListComponent implements OnInit {
 
   private getEmployees(){
 
-    this.employeeService.getEmployeesList().subscribe(data =>{
+    this.employeeService.getEmployeesList().subscribe(
+      data =>{
       this.employees= data;                       
-    });
+    },
+    err =>{
+      console.log(err);
+    }
+    );
   }
 
 }

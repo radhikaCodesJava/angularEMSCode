@@ -1,6 +1,6 @@
 {
-    "/url": {
-      "target":"http://localhost:1234/",
+    "/replace": {
+      "target":"http://localhost:1234",
       "pathRewrite": {
         "^/url": ""
       },
